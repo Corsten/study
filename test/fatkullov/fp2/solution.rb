@@ -14,20 +14,20 @@ module Fatkullov
       # Написать свою функцию my_map
       def my_map
         new_array = MyArray.new
-        self.my_each { |element| new_array.push(yield(element)) }
+        my_each { |element| new_array.push(yield(element)) }
         new_array
       end
 
       # Написать свою функцию my_compact
       def my_compact
         new_array = MyArray.new
-        self.my_each { |element| new_array.push(element) if element }
+        my_each { |element| new_array.push(element) if element }
         new_array
       end
 
       # Написать свою функцию my_reduce
       def my_reduce(acc = nil)
-        self.my_each { |element| acc = acc ? yield(acc, element) : element }
+        my_each { |element| acc = acc ? yield(acc, element) : element }
         acc
       end
     end

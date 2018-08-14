@@ -8,7 +8,7 @@ module Fatkullov
         selection = array.select { |film| !film['country'].nil? && film['country'].include?(country) && !film['rating_imdb'].to_f.zero? }
                          .map { |film| film['rating_imdb'].to_f }
 
-         selection.reduce(:+) / selection.length
+        selection.reduce(:+) / selection.length
       end
 
       def chars_count(films, year)
